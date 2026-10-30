@@ -234,6 +234,63 @@ footer{margin-top:20px!important}
 .dark .band, .dark .band h2, .dark .band p, .dark .band small, .dark .band li { color: #FFFFFF !important; }
 .hc .band, .hc .band h2, .hc .band p { color: #FFFFFF !important; }
 </style>
+
+<style id="apem-clickable-header-fix">
+/* Header controls: visible focus and reliable tap targets */
+.site-header .icon-btn,
+.site-header .avatar-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 42px;
+  width: 42px;
+  height: 42px;
+  min-width: 42px;
+  padding: 0;
+  line-height: 1;
+  border-radius: 50%;
+  cursor: pointer;
+  touch-action: manipulation;
+}
+.site-header .icon-btn { background: #fff4cf; color: #18324b; }
+.site-header .avatar-btn { background: #eaf0f5; color: #18324b; }
+.site-header .icon-btn:focus-visible,
+.site-header .avatar-btn:focus-visible,
+.home-search button:focus-visible {
+  outline: 3px solid #1b6ac9;
+  outline-offset: 3px;
+}
+.home-search button {
+  display: inline-flex !important;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: center;
+  gap: 7px;
+  white-space: nowrap !important;
+  line-height: 1 !important;
+  text-align: center;
+  writing-mode: horizontal-tb;
+  min-width: 92px;
+  flex: 0 0 auto;
+}
+.home-search button b {
+  display: inline-block !important;
+  margin: 0 !important;
+  line-height: 1 !important;
+  font-size: 18px !important;
+  font-weight: 800;
+  transform: none !important;
+  position: static !important;
+}
+@media (max-width: 560px) {
+  .home-search { display: flex !important; align-items: center; min-width: 0; }
+  .home-search input { min-width: 0; flex: 1 1 auto; width: 1%; }
+  .home-search button { min-width: 82px; padding: 0 13px !important; }
+  .home-search button b { font-size: 17px !important; }
+}
+</style>
+
 </head>
 <body>
 <a class="skip" href="#app">Langsung ke konten</a>
@@ -443,5 +500,24 @@ document.addEventListener('submit',e=>{
 document.addEventListener('click',e=>{if(e.target.closest('#logoutBtn')){setStaticUser(null);toast('Sesi demo ditutup.');go('#/');}});
 route();
 </script>
+
+<script id="apem-header-control-fix">
+document.addEventListener('click', function (event) {
+  const notification = event.target.closest('.site-header .icon-btn');
+  if (notification) {
+    event.preventDefault();
+    if (typeof toast === 'function') toast('Belum ada notifikasi baru.');
+    else window.alert('Belum ada notifikasi baru.');
+    return;
+  }
+  const profile = event.target.closest('.site-header .avatar-btn');
+  if (profile) {
+    event.preventDefault();
+    if (typeof go === 'function') go('#/akun');
+    else window.location.hash = '#/akun';
+  }
+});
+</script>
+
 </body>
 </html>
