@@ -180,6 +180,52 @@ footer{margin-top:20px!important}
   body:not(.mo) .site-header:not(.mobile-open) nav.mnav{display:none!important}
 }
 
+
+/* Dark-mode and contrast fixes: override hard-coded light surfaces safely */
+.dark{color-scheme:dark;--apem-bg:#0F1720;--apem-card:#17212C;--apem-line:#344252;--apem-muted:#C0CBD6;--apem-navy:#F0F4F8;--apem-navy-2:#D8E6F2;--apem-cream:#242D36;--apem-shadow:0 10px 30px rgba(0,0,0,.22);--apem-shadow-lg:0 24px 70px rgba(0,0,0,.35)}
+.dark html,.dark body{background:#0F1720!important;color:#F0F4F8!important}
+.dark body{background:linear-gradient(#111B25 0 74px,#0F1720 74px)!important}
+.dark header,.dark .site-header{background:rgba(18,28,39,.97)!important;border-color:#344252!important}
+.dark nav.mnav a,.dark h1,.dark h2,.dark h3,.dark h4,.dark p,.dark li,.dark label,.dark small,.dark .cat b,.dark .pr,.dark .stats b{color:#F0F4F8!important}
+.dark .mute,.dark .field-help,.dark .stats div,.dark .home-stats small{color:#C0CBD6!important}
+.dark .hero,.dark .home-hero,.dark .band{background:linear-gradient(115deg,#1B2732,#17212C)!important;border-color:#344252!important;color:#F0F4F8!important}
+.dark .hero h1,.dark .hero h2,.dark .hero p,.dark .home-hero h1,.dark .home-hero p{color:#F0F4F8!important}
+.dark .card,.dark .stats,.dark .hs,.dark .cat,.dark .service-card,.dark .kpi,.dark .order-row,.dark .auth-card,.dark .empty,.dark .account-nav a{background:#17212C!important;border-color:#344252!important;color:#F0F4F8!important}
+.dark .cat .ic,.dark .tcard .av{background:#293847!important;color:#FFE08A!important;border-color:#526171!important}
+.dark .tags li,.dark .chip{background:#202C38!important;color:#EAF0F5!important;border-color:#465565!important}
+.dark .chip[aria-pressed=true]{background:#FFC20A!important;color:#17212B!important;border-color:#FFC20A!important}
+.dark input,.dark select,.dark textarea,.dark .bar input,.dark .hs input{background:#111B25!important;color:#F0F4F8!important;border-color:#465565!important}
+.dark input::placeholder,.dark textarea::placeholder{color:#AEBAC6!important;opacity:1}
+.dark .bar form button{background:#202C38!important;color:#F0F4F8!important;border-color:#465565!important}
+.dark .btn.o,.dark .btn.o:hover{background:#202C38!important;color:#F0F4F8!important;border-color:#718194!important}
+.dark .btn:not(.o){color:#17212B!important}
+.dark .cat:after{background:#3A3420!important;color:#FFE08A!important}
+.dark .hb{background:#202C38!important;color:#F0F4F8!important;border-color:#465565!important}
+.dark footer{background:#080E14!important;color:#F0F4F8!important}
+.dark footer a,.dark footer p,.dark footer h2,.dark footer h3{color:#F0F4F8!important}
+.dark dialog{background:#17212C!important;color:#F0F4F8!important;border-color:#465565!important}
+.dark dialog p,.dark dialog label,.dark dialog h1,.dark dialog h2,.dark dialog h3{color:#F0F4F8!important}
+.dark .profile-badge{background:#123E32!important;color:#9AF0D3!important}
+.dark .danger{color:#FF9C96!important}.dark .success,.dark .ok{color:#7DE4BC!important}
+.dark table,.dark th,.dark td{border-color:#465565!important;color:#F0F4F8!important}
+.dark .mobile-open nav.mnav{background:#17212C!important;border-color:#344252!important}
+.dark #toast{background:#253546!important;color:#fff!important}
+.hc.dark,.hc.dark body,.hc.dark header,.hc.dark .card,.hc.dark .hero,.hc.dark input,.hc.dark select,.hc.dark textarea{background:#000!important;color:#fff!important;border-color:#fff!important}
+.hc.dark *{border-color:#fff!important}
+@media(max-width:799px){
+ .bar{gap:8px!important}
+ .bar form{flex:1 1 100%!important;order:10!important;min-width:0!important}
+ .bar form input{min-width:0!important;font-size:16px!important}
+ #mn{min-width:48px!important;padding:9px 14px!important}
+ nav.mnav{padding:8px 0!important;gap:4px!important}
+ nav.mnav a{min-height:44px!important}
+ .hero .img{min-height:0!important}
+ .stats{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .grid{grid-template-columns:repeat(2,minmax(0,1fr))!important}
+ .grid.g2,.grid.g3{grid-template-columns:1fr!important}
+}
+@media(max-width:380px){.bar{padding:8px 10px!important}.logo img{height:32px!important}.grid{grid-template-columns:1fr!important}.hero{padding:22px 16px!important}}
+
 </style>
 </head>
 <body>
